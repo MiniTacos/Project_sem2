@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from wordcloud import WordCloud
 
-df = pd.read_csv('notebooks/parsed_data.csv')
+df = pd.read_csv('dashboard/parsed_data.csv')
 
 st.sidebar.title("Навигация")
 section = st.sidebar.radio("Выберите раздел",["Главная", "Данные", "EDA", "Тренды и закономерности", "Выводы"])
