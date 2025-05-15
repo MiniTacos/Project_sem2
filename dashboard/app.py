@@ -33,8 +33,6 @@ if section == "Главная":
 # Раздел с данными
 elif section == "Данные":
     st.header("Исходные данные")
-
-    # Показать весь датафрейм с возможностью фильтрации
     st.subheader("Полный набор данных")
     st.dataframe(df, use_container_width=True)
 
@@ -104,7 +102,6 @@ elif section == "EDA":
         max_words=1000
     ).generate(' '.join(df['Жанр'].astype(str)))
 
-    # Отображение
     fig, ax = plt.subplots(figsize=(12, 6))
     fig.set_facecolor('#121212')
     ax.imshow(wordcloud, interpolation='bilinear')
@@ -183,7 +180,6 @@ elif section == "Тренды и закономерности":
             default=df['Жанр'].value_counts().nlargest(3).index.tolist()
         )
 
-    # Применение фильтров
     filtered_df = df[
         (df['Год выпуска'] >= year_range[0]) &
         (df['Год выпуска'] <= year_range[1])
